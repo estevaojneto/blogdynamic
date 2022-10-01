@@ -1,0 +1,14 @@
+
+body {
+    font-family: 'Roboto Slab', serif;
+    color: #eae8e6 !important
+}
+a {
+    color: #eae8e6 !important
+}
+input{
+    text-align:center;
+    border: 0;
+    background-color: transparent;
+    color: #ccc;
+}
