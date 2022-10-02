@@ -49,4 +49,12 @@ class Postloader
     {
         return sprintf('%s', self::getMostRecentPostSlug());
     }
+
+    public static function loadFrontpagePostList()
+    {
+        $latest_posts = self::getMostRecentPosts();
+        foreach ($latest_posts as $post) {
+            echo get_template_part('template-part/homepage-posts', null, $post);
+        }
+    }
 }

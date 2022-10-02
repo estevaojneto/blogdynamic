@@ -13,15 +13,15 @@ $latest_post_link = Theme\PostLoader::getMostRecentPostLink();
         <div class="row main-row">
             <div class="col-sm-3 left-column align-content-center" data-function="sidebar">
                 <div class="left-column-contents w-75">
-                
-                    <img class="img-fluid img-thumbnail my-photo" src="<?= get_avatar_url(1) ?>">
+                    <img width=186 height=186 class="img-fluid img-thumbnail my-photo" src="<?= get_avatar_url(1) ?>">
                     <p class="h4"><?= get_userdata(1)->first_name ?> <?= get_userdata(1)->last_name ?></p>
-                    <small><?= __('Latest posts', 'blogdynamic') ?>
-                    <a href="#" data-post-link="<?= $latest_post_link ?>"><?= $latest_post_name ?> (29/03/2023)</a></small>
+                    <small><?= __('Latest post:', 'blogdynamic') ?>
+                    <a href="#<?= $latest_post_link ?>" data-post-link="<?= $latest_post_link ?>"><?= $latest_post_name ?></a></small>
                     <div class="searchbox-container">
                         <input type="text" class="mw-100" placeholder="Search for a post">
                     </div>
                     <div class="history-browser">                     
+                        <!--
                         <div class="accordion-flush p-4" id="accordionFlushExample">
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="flush-headingOne">
@@ -40,10 +40,12 @@ $latest_post_link = Theme\PostLoader::getMostRecentPostLink();
                                 </div>
                             </div>
                         </div>
+                        -->
                     </div>
                 </div>
             </div>
             <div class="col-sm-9 right-column" data-function="contents" data-loaded-post-id="0">
+                <?= Theme\PostLoader::loadFrontpagePostList() ?>
             </div>
         </div>
     </div>

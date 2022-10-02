@@ -2,7 +2,8 @@ const $ = window.jQuery || [];
 
 // Workaround due to a:click not being captured (???)
 $(document).ready(function() {
-    $('a[data-post-link]').on('click', function (e) {
+    const linkClick = function () {
+        $('a[data-post-link]').on('click', function (e) {
         e.preventDefault();
         const slug = $(this).data('post-link');
         $.ajax({
@@ -11,7 +12,10 @@ $(document).ready(function() {
             method: 'GET',
             success: function(response) {
                 $('div[data-function="contents"]').html(response);
+                linkClick();
             }
         });
-    });
+        });
+    }
+    linkClick();
 });

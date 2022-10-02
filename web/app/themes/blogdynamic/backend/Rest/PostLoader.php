@@ -34,9 +34,13 @@ class PostLoader extends WP_REST_Controller
     {
         header('Content-Type: text/html; charset=utf-8');
         $slug_to_get = sanitize_title($_GET['slug']);
-        $post = get_page_by_path($slug_to_get, OBJECT, 'post');
-        if ($post) {
-            echo get_template_part('post', null, ['post_content' => $post->post_content, 'post_title' => $post->post_title]);
+        if ($slug_to_get == 'main-post-list') {
+            \Theme\PostLoader::loadFrontpagePostList();
+        } else {
+            $post = get_page_by_path($slug_to_get, OBJECT, 'post');
+            if ($post) {
+                echo get_template_part('post', null, ['post_content' => $post->post_content, 'post_title' => $post->post_title]);
+            }
         }
     }
 }
