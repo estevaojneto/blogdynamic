@@ -1,5 +1,5 @@
 <?php
-extract($args)
+extract($args);
 ?>
 <div class="container lh-lg overflow-auto h-100">
     <div class="col-md-8 mx-auto pb-4">
@@ -30,3 +30,4 @@ extract($args)
             </div>
     </div>
 </div>
+<span type="text" class="d-none" data-post-id="<?= $post_id ?>"></span>

@@ -39,7 +39,7 @@ class PostLoader extends WP_REST_Controller
         } else {
             $post = get_page_by_path($slug_to_get, OBJECT, 'post');
             if ($post) {
-                echo get_template_part('post', null, ['post_content' => $post->post_content, 'post_title' => $post->post_title]);
+                echo get_template_part('post', null, ['post_content' => $post->post_content, 'post_title' => $post->post_title, 'post_id' => $post->ID]);
             }
         }
     }
