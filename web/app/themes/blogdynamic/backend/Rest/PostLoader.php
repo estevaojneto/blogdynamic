@@ -38,16 +38,7 @@ class PostLoader extends WP_REST_Controller
         ];
         ob_start();
         $slug_to_get = sanitize_title($_GET['slug']);
-        if ($slug_to_get == 'main-post-list') {
-            echo \Theme\PostLoader::loadFrontpagePostList();
-        } else {
-            $post = get_page_by_path($slug_to_get, OBJECT, 'post');            
-            if ($post) {
-                echo get_template_part('single', null);
-            } else {
-                echo \Theme\PostLoader::loadFrontpagePostList();
-            }
-        }
+        echo \Theme\PostLoader::loadPostBySlug($slug_to_get);
         $contents["contents"] = ob_get_contents();
         ob_end_clean();
         return $contents;

@@ -22,11 +22,6 @@ const linkClickEventHandler = () =>
     });
 }
 
-const currUrl = new URL(window.location);
-
 $(document).ready(function() {
-    if(currUrl.pathname.length > 1) {
-        loadPage(currUrl.pathname);
-    }    
     linkClickEventHandler();
 });

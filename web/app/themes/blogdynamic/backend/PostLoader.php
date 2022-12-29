@@ -50,6 +50,30 @@ class Postloader
         return sprintf('%s', self::getMostRecentPostSlug());
     }
 
+    public static function loadPostByObject(\WP_Post $post)
+    {
+        $home_id = get_option('page_on_front');
+        if ($home_id == $post->ID) {
+            self::loadFrontpagePostList();
+        } else {
+            echo get_template_part('single', null);
+        }
+    }
+
+    public static function loadPostBySlug($slug_to_get)
+    {
+        global $post;
+        if ($slug_to_get == 'main-post-list') {
+            echo self::loadFrontpagePostList();
+        } else {
+            $post = get_page_by_path($slug_to_get, OBJECT, 'post');            
+            if (!$post) {
+                $post = get_post(get_option('page_on_front'));
+            }
+            self::loadPostByObject($post);
+        }
+    }
+
     public static function loadFrontpagePostList()
     {
         $latest_posts = self::getMostRecentPosts();

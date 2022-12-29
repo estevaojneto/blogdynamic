@@ -4,6 +4,7 @@
  */
 $latest_post_name = Theme\PostLoader::getMostRecentPostName();
 $latest_post_link = Theme\PostLoader::getMostRecentPostLink();
+global $post;
 ?>
 <!doctype html>
 <html lang="en" style="overflow: hidden">
@@ -45,7 +46,7 @@ $latest_post_link = Theme\PostLoader::getMostRecentPostLink();
                 </div>
             </div>
             <div class="col-sm-9 right-column" data-function="contents" data-loaded-post-id="0">
-                <?= Theme\PostLoader::loadFrontpagePostList() ?>
+                <?= Theme\PostLoader::loadPostByObject($post) ?>
             </div>
         </div>
     </div>
