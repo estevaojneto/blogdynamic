@@ -18,7 +18,7 @@ $latest_post_link = Theme\PostLoader::getMostRecentPostLink();
                     <small><?= __('Latest post:', 'blogdynamic') ?></small><br>
                     <a href="#<?= $latest_post_link ?>" data-post-link="<?= $latest_post_link ?>"><small><?= $latest_post_name ?></small></a>
                     <div class="searchbox-container">
-                        <input type="text" class="mw-100" placeholder="Search for a post">
+                        <!-- <input type="text" class="mw-100" placeholder="Search for a post"> -->
                     </div>
                     <div class="history-browser">                     
                         <!--

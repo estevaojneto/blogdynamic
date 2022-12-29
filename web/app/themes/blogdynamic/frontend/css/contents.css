@@ -5,7 +5,6 @@ img.my-photo{
     margin: 3vh 0 3vh 0
 }
 .left-column {
-    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAECAYAAAC3OK7NAAAAGklEQVQImWNgIAH8x8LHJoYi+R+LBnRN+AEA+cYJ9+g/e4AAAAAASUVORK5CYII=) repeat;
     background-color: #2a2826;
     display: flex;
     justify-content: center;
@@ -19,6 +18,7 @@ img.my-photo{
     background-color: #4a4846;
     min-height:100vh;
     max-height:100vh;
+    overflow-y: scroll;
 }
 .searchbox-container {
     width:100%;
