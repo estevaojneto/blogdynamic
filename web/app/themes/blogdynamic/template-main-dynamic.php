@@ -18,6 +18,8 @@ global $post;
                     <p class="h4"><?= get_userdata(1)->first_name ?> <?= get_userdata(1)->last_name ?></p>
                     <small><?= __('Latest post:', 'blogdynamic') ?></small><br>
                     <a href="<?= $latest_post_link ?>"><small><?= $latest_post_name ?></small></a>
+                    <br><br><br>
+                    <small><a href="<?= get_privacy_policy_url() ?>"><?= __("Privacy Policy") ?></a></small>
                     <div class="searchbox-container">
                         <!-- <input type="text" class="mw-100" placeholder="Search for a post"> -->
                     </div>
