@@ -8,11 +8,12 @@ class SiteLoader
     public function __construct()
     {
         if (self::$currInstance === null) {
+            add_filter( 'wp_enqueue_scripts', [get_class(), 'removeJqueryQueue']);
             add_filter('xmlrpc_enabled', '__return_false');
             remove_filter( 'the_title', 'capital_P_dangit', 11 );
             remove_filter( 'the_content', 'capital_P_dangit', 11 );
             remove_filter( 'comment_text', 'capital_P_dangit', 31 );
-            add_filter('excerpt_length', function () { return 100; }, 999);
+            add_filter('excerpt_length', function () { return 50; }, 999);
             remove_action('wp_head', 'print_emoji_detection_script', 7);
             add_action('get_footer', [get_class(), 'queueThemeStyles'], PHP_INT_MAX);
             add_action('get_footer', [get_class(), 'queueThemeScripts'], PHP_INT_MAX);
@@ -21,6 +22,11 @@ class SiteLoader
         }
     }
 
+    public static function removeJqueryQueue()
+    {
+        wp_dequeue_script( 'jquery');
+        wp_deregister_script( 'jquery');   
+    }
     public static function redirectMainTemplate($template) {
         if (is_404()) {
             wp_redirect(home_url()); die;

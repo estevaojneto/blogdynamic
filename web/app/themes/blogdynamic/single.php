@@ -10,7 +10,7 @@ extract($args);
 ?>
 <div class="container lh-lg overflow-auto h-100">
     <div class="col-md-8 mx-auto pb-4">
-        <a class="h2 pb-2" data-post-link="main-post-list" href="#"><<</a>
+        <a class="h2 pb-2" data-post-link="main-post-list" href="<?= home_url() ?>"><<</a>
             <div class="pb-4">
                 <h1><?= $post_title ?></h1>
                 <p><em><?= $post_date ?></em></p>

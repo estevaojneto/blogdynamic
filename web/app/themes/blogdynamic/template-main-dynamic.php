@@ -14,10 +14,10 @@ global $post;
         <div class="row main-row">
             <div class="col-sm-3 left-column align-content-center" data-function="sidebar">
                 <div class="left-column-contents w-75">
-                    <img width=186 height=186 class="img-fluid img-thumbnail my-photo" src="<?= get_avatar_url(1) ?>">
+                    <!-- -->
                     <p class="h4"><?= get_userdata(1)->first_name ?> <?= get_userdata(1)->last_name ?></p>
                     <small><?= __('Latest post:', 'blogdynamic') ?></small><br>
-                    <a href="#<?= $latest_post_link ?>" data-post-link="<?= $latest_post_link ?>"><small><?= $latest_post_name ?></small></a>
+                    <a href="<?= $latest_post_link ?>"><small><?= $latest_post_name ?></small></a>
                     <div class="searchbox-container">
                         <!-- <input type="text" class="mw-100" placeholder="Search for a post"> -->
                     </div>
