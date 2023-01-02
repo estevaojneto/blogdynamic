@@ -8,6 +8,13 @@ class SiteLoader
     public function __construct()
     {
         if (self::$currInstance === null) {
+            remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+            remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+            remove_action( 'wp_print_styles', 'print_emoji_styles' );
+            remove_action( 'admin_print_styles', 'print_emoji_styles' ); 
+            remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+            remove_filter( 'comment_text_rss', 'wp_staticize_emoji' ); 
+            remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
             add_filter( 'wp_enqueue_scripts', [get_class(), 'removeWpScriptsQueue']);
             add_filter('xmlrpc_enabled', '__return_false');
             remove_filter( 'the_title', 'capital_P_dangit', 11 );
@@ -27,6 +34,8 @@ class SiteLoader
         wp_dequeue_style( 'wp-block-library' );
         wp_dequeue_style( 'wp-block-library-theme' );
         wp_dequeue_style( 'wc-blocks-style' );
+        wp_deregister_style('classic-theme-styles');
+        wp_dequeue_style('classic-theme-styles');
         wp_dequeue_script( 'jquery');
         wp_deregister_script( 'jquery');   
     }
@@ -46,8 +55,7 @@ class SiteLoader
     public static function queueThemeScripts()
     {
         $theme_dir = dirname(get_stylesheet_uri());
-        wp_enqueue_script(['jquery']);
-        wp_enqueue_script('main', $theme_dir.Constants::FRONTEND_JS_PATH.'/main.js', 'jquery');
+        //wp_enqueue_script('main', $theme_dir.Constants::FRONTEND_JS_PATH.'/main.js', 'jquery');
     }
 
     public static function queueThemeStyles()
@@ -55,7 +63,5 @@ class SiteLoader
         $theme_dir = dirname(get_stylesheet_uri());
         wp_enqueue_style('bootstrap', $theme_dir.Constants::FRONTEND_CSS_PATH.'/bootstrap.min.css');
         wp_enqueue_style('main', $theme_dir.Constants::FRONTEND_CSS_PATH.'/main.css');
-        wp_enqueue_style('contents', $theme_dir.Constants::FRONTEND_CSS_PATH.'/contents.css');
-        wp_enqueue_style('scrollbar', $theme_dir.Constants::FRONTEND_CSS_PATH.'/scrollbar.css');
     }
 }
