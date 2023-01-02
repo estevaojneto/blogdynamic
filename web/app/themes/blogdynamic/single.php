@@ -1,22 +1,16 @@
 <?php
 global $post;
-$args = [
-        'post_content' => $post->post_content,
-        'post_date' => $post->post_date,
-        'post_title' => $post->post_title,
-        'post_id' => $post->ID
-    ];
-extract($args);
 ?>
 <div class="container lh-lg overflow-auto h-100">
     <div class="col-md-8 mx-auto pb-4">
         <a class="h2 pb-2" data-post-link="main-post-list" href="<?= home_url() ?>"><<</a>
             <div class="pb-4">
-                <h1><?= $post_title ?></h1>
-                <p><em><?= $post_date ?></em></p>
+                <h2><?= $post->post_title ?></h2>
+                <p><em><?= get_the_date(); ?></em></p>
+                <p><em>By <?= get_the_author_meta('user_firstname', $post->post_author).' '.get_the_author_meta('user_lastname', $post->post_author); ?></em></p>
             </div>
             <div>
-                <?= wpautop($post_content) ?>
+                <?= wpautop($post->post_content) ?>
             </div>
             <hr>
             <div class="row mx-auto pb-4">
@@ -39,7 +33,7 @@ extract($args);
             <?php get_template_part('comments');
             
             $comments = get_comments(array(
-                'post_id' => $post_id,
+                'post_id' => $post->ID,
                 'status' => 'approve' //Change this to the type of comments to be displayed
             ));
     
@@ -51,4 +45,3 @@ extract($args);
             ?>
     </div>
 </div>
-<span type="text" class="d-none" data-post-id="<?= $post_id ?>"></span>

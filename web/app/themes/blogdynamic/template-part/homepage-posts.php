@@ -2,7 +2,8 @@
     <div class="col-md-8 mx-auto">
         <div class="pb-2">
             <h1><a class="h1" href="<?= home_url() ?>/<?= $args['post_name'] ?>" data-post-link="<?= $args['post_name'] ?>"><?= $args['post_title'] ?></a></h1>
-            <p><em><?= $args['post_date'] ?></em></p>
+            <p><em><?= wp_date( get_option('date_format'), strtotime($args['post_date'])); ?></em></p>
+            <p><em>By <?= get_the_author_meta('user_firstname', $post->post_author).' '.get_the_author_meta('user_lastname', $post->post_author); ?></em></p>
         </div>
         <div class="pt-2">
             <?= wp_trim_excerpt('', $args['ID']) ?>

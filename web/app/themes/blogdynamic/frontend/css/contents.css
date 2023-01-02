@@ -9,6 +9,11 @@ img.my-photo{
     display: flex;
     justify-content: center;
     align-items: center; 
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 99999999999;
+    max-height: 100vh
 }
 .left-column-contents {
     margin: 6.25%;
@@ -16,11 +21,27 @@ img.my-photo{
 }
 .right-column {
     background-color: #4a4846;
-    min-height:100vh;
-    max-height:100vh;
-    overflow-y: scroll;
 }
 .searchbox-container {
     width:100%;
     margin: 0 auto
+}
+h1.blogtitle {
+    font-family: monospace
+}
+input:not([type=submit])
+{
+    background-color: white;
+    border-radius: 3px;
+    border: 2px solid #ccc!important
+}
+
+input[type=submit]{
+    border: 2px solid #ccc!important;
+    border-radius: 3px;
+}
+.container-full{
+    overflow-y: scroll;
+    height: 100vh;
+    overflow-x: hidden;
 }

@@ -10,15 +10,17 @@ global $post;
 <html lang="en" style="overflow: hidden">
   <?= get_header(); ?>
   <body>
-    <div class="container-fluid">
+    <div class="container-full">
         <div class="row main-row">
             <div class="col-sm-3 left-column align-content-center" data-function="sidebar">
                 <div class="left-column-contents w-75">
                     <!-- -->
-                    <p class="h4"><?= get_userdata(1)->first_name ?> <?= get_userdata(1)->last_name ?></p>
-                    <small><?= __('Latest post:', 'blogdynamic') ?></small><br>
-                    <a href="<?= $latest_post_link ?>"><small><?= $latest_post_name ?></small></a>
-                    <br><br><br>
+                    <h1 class="h4 blogtitle"><a href="<?= home_url(); ?>"><?= get_bloginfo('name') ?></a></h1>
+                    <p>
+                        <?= __('Latest post:', 'blogdynamic') ?><br>
+                        <a href="<?= $latest_post_link ?>"><?= $latest_post_name ?></a>
+                    </p>
+                    <br>
                     <small><a href="<?= get_privacy_policy_url() ?>"><?= __("Privacy Policy") ?></a></small>
                     <div class="searchbox-container">
                         <!-- <input type="text" class="mw-100" placeholder="Search for a post"> -->
@@ -47,7 +49,7 @@ global $post;
                     </div>
                 </div>
             </div>
-            <div class="col-sm-9 right-column" data-function="contents" data-loaded-post-id="0">
+            <div class="col-sm-9 right-column">
                 <?= Theme\PostLoader::loadPostByObject($post) ?>
             </div>
         </div>

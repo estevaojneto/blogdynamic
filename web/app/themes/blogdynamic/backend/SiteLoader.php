@@ -8,7 +8,7 @@ class SiteLoader
     public function __construct()
     {
         if (self::$currInstance === null) {
-            add_filter( 'wp_enqueue_scripts', [get_class(), 'removeJqueryQueue']);
+            add_filter( 'wp_enqueue_scripts', [get_class(), 'removeWpScriptsQueue']);
             add_filter('xmlrpc_enabled', '__return_false');
             remove_filter( 'the_title', 'capital_P_dangit', 11 );
             remove_filter( 'the_content', 'capital_P_dangit', 11 );
@@ -22,8 +22,11 @@ class SiteLoader
         }
     }
 
-    public static function removeJqueryQueue()
+    public static function removeWpScriptsQueue()
     {
+        wp_dequeue_style( 'wp-block-library' );
+        wp_dequeue_style( 'wp-block-library-theme' );
+        wp_dequeue_style( 'wc-blocks-style' );
         wp_dequeue_script( 'jquery');
         wp_deregister_script( 'jquery');   
     }
@@ -50,6 +53,7 @@ class SiteLoader
     public static function queueThemeStyles()
     {
         $theme_dir = dirname(get_stylesheet_uri());
+        wp_enqueue_style('bootstrap', $theme_dir.Constants::FRONTEND_CSS_PATH.'/bootstrap.min.css');
         wp_enqueue_style('main', $theme_dir.Constants::FRONTEND_CSS_PATH.'/main.css');
         wp_enqueue_style('contents', $theme_dir.Constants::FRONTEND_CSS_PATH.'/contents.css');
         wp_enqueue_style('scrollbar', $theme_dir.Constants::FRONTEND_CSS_PATH.'/scrollbar.css');
