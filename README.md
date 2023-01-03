@@ -8,7 +8,7 @@ A theme originally used in https://0395.ch.
 - Inspiration for writing!
 
 ## Nice-to-haves
-- Classic Editor plugin. For the purposes of this theme Gutenberg is just an unnecessary overhead;
+- Classic Editor plugin. At least for now, for the purposes of this theme, Gutenberg is just an unnecessary overhead;
 
 ## How to Set Up
 - Install the Theme however you want; you can just download a zip copy of this repository and upload it to your site if you want, or you can `git clone` this to your server theme folder (recommended);
@@ -20,5 +20,5 @@ A theme originally used in https://0395.ch.
 ## Credits
 For forks, I ask you to please keep these credits and just add your name to them. :)
 
-Estevão Neto - https://github.com/estevaojneto - Original theme concept and implementation
-Alan Viotto - https://github.com/AlanViotto - Original theme fancy preview image
+- Estevão Neto - https://github.com/estevaojneto - Original theme concept and implementation
+- Alan Viotto - https://github.com/AlanViotto - Original theme fancy preview image
