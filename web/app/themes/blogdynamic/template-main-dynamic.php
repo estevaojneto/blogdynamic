@@ -23,29 +23,8 @@ global $post;
                     <br>
                     <small><a href="<?= get_privacy_policy_url() ?>"><?= __("Privacy Policy") ?></a></small>
                     <div class="searchbox-container">
-                        <!-- <input type="text" class="mw-100" placeholder="Search for a post"> -->
                     </div>
                     <div class="history-browser">                     
-                        <!--
-                        <div class="accordion-flush p-4" id="accordionFlushExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="flush-headingOne">
-                                <button style="display:contents" class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                    2022
-                                </button>
-                                </h2>
-                                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                    <a href="#">Jan</a><br>
-                                    <a href="#">Fev</a><br>
-                                    <a href="#">Mar</a><br>
-                                    <a href="#">Apr</a><br>
-                                    <a href="#">May</a><br>
-                                    <a href="#">Jun</a><br>
-                                    <a href="#">Jul</a><br>
-                                </div>
-                            </div>
-                        </div>
-                        -->
                     </div>
                 </div>
             </div>
