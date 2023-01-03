@@ -1,3 +1,5 @@
+<img src="https://github.com/estevaojneto/blogdynamic/blob/main/screenshot.png"/>
+
 A theme originally used in https://0395.ch.
 
 ## Requirements
