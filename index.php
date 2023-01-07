@@ -1,1 +1,4 @@
-<?php require "template-main-dynamic.php"; // TODO: improve template loading so we don't need this ugly workaround ?>
+<?php if (!is_admin()) {
+    require 'frontend/build/index.html';
+    die;
+ } ?>
