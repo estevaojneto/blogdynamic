@@ -8,10 +8,6 @@ use WP_Error;
 use WP_Query;
 use Theme\Constants;
 
-/**
- * @deprecated No longer in use, but still functional
- */
-
 class PostLoader extends WP_REST_Controller
 {
     public function __construct()

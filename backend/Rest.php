@@ -2,9 +2,6 @@
 
 namespace Theme;
 
-/**
- * @deprecated No longer in use, but still functional
- */
 class PostLoader 
 {
     static $mostRecentPost = null; // only one instance per load, no reason for more
