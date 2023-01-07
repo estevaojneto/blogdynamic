@@ -1,7 +1,7 @@
 import React from 'react'
 import Card from './Card'
 import { useState, useEffect } from 'react'
-import { POST_ENDPOINT } from '../../constants';
+import { POSTS_ENDPOINT } from '../../constants';
 
 const List = () => {
     const [error, setError] = useState(null);
@@ -9,7 +9,7 @@ const List = () => {
     const [posts, setPosts] = useState([]);
   
     useEffect(() => {
-      fetch(POST_ENDPOINT)
+      fetch(POSTS_ENDPOINT)
         .then(res => res.json())
         .then(
           (result) => {
