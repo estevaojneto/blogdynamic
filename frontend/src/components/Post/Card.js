@@ -1,15 +1,16 @@
 import React from 'react'
 import Header from './Header'
+import Link from './Link'
 
-const Card = (props) => {
+const Card = ({post, setColumnContents}) => {
   return (
       <div className="row p-2">
           <div className="col-md-8 mx-auto pb-3 container-PostList-post">
-            <Header post={props.post}></Header>
+            <Header post={post} setColumnContents={setColumnContents}></Header>
               <div>
-                <p><em>{props.post.contents}</em></p>
+                <p><em>{post.contents}</em></p>
               </div>
-              <a className="h4" href={props.post.name}>View Post</a>
+              <Link setColumnContents={setColumnContents} size={"h4"} slug={post.name} text={"Read More"}></Link>
           </div>
       </div>
   )
