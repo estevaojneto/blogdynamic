@@ -1,10 +1,11 @@
-import React from 'react'
+import ColumnContents from './ColumnContents'
 import Sidebar from './Sidebar'
 
-const LeftColumn = () => {
+const LeftColumn = ({setColumnContents}) => {
+  let columnContents = <Sidebar setColumnContents={setColumnContents} />;
   return (
     <div className="col-sm-3 left-column align-content-center" data-function="sidebar">
-      <Sidebar />
+      <ColumnContents columnContents={columnContents}/>
     </div>
   )
 }

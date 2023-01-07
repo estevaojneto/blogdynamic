@@ -1,7 +1,8 @@
 
 body {
-  font-family: 'Helvetica', serif;
-  color: #eae8e6 !important
+  color: #eae8e6 !important;
+  word-break: break-all;
+  white-space: normal;
 }
 a {
   color: #eae8e6 !important
@@ -34,7 +35,9 @@ img.my-photo{
 }
 .right-column {
   background-color: #4a4846;
-  padding-bottom: 12vh
+  padding-bottom: 12vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 .searchbox-container {
   width:100%;
@@ -55,9 +58,8 @@ input[type=submit]{
   border-radius: 3px;
 }
 .container-full{
-  overflow-y: scroll;
   height: 100vh;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .container-PostList-post {
   width: 80%;

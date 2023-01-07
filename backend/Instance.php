@@ -22,7 +22,8 @@ class Instance
             remove_filter('the_title', 'capital_P_dangit', 11);
             remove_filter('the_content', 'capital_P_dangit', 11);
             remove_filter('comment_text', 'capital_P_dangit', 31);
-            add_filter('excerpt_length', function () { return 50; }, 999);
+            add_filter('excerpt_length', function () { return 45; }, 999);
+            update_option('stylesheet_url', get_template_directory_uri());
             self::$currInstance = $this;
             add_action('rest_api_init', function () {
                 RestAPI::getInstance()->init(

@@ -5,6 +5,7 @@ A theme originally used in https://0395.ch.
 ## Requirements
 - A WordPress v6.x installation (theme compatibility with WP 5.x is theoretically possible but untested);
 - A web server running PHP 8.0 and MySQL;
+- NPM to run "npm run build";
 - Inspiration for writing!
 
 ## Nice-to-haves
@@ -12,8 +13,8 @@ A theme originally used in https://0395.ch.
 
 ## How to Set Up
 - Install the Theme however you want; you can just download a zip copy of this repository and upload it to your site if you want, or you can `git clone` this to your server theme folder (recommended);
-- Create a new Page with the Template "BlogDynamic Main Page";
-- Set that page as your Home page;
+- Go to the frontend/ folder of the theme, copy .env.example to a new file named .env; where it says PUBLIC_URL, change the constant name to the theme URI in your site;
+- Run `npm run build` so React can generate its files accordingly;
 - Set a privacy policy, as most countries actually require your site to have one;
 - All set! All your posts will be there.
 

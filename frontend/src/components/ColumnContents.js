@@ -1,10 +1,6 @@
-import React from 'react'
-
 const ColumnContents = ({columnContents}) => {
         return (
-        <div>
-          {columnContents}
-        </div>
+          columnContents
     );
 }
 

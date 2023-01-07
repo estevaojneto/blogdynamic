@@ -36,8 +36,8 @@ class SitemetaEndpointController extends RestController
         $info = [
             'home_url' => home_url(),
             'site_name' => get_bloginfo('blogname'),
-            'latest_post_url' => RecentPosts::getMostRecentPost() ?
-                get_permalink(RecentPosts::getMostRecentPost()) :
+            'latest_post_slug' => RecentPosts::getMostRecentPost() ?
+                RecentPosts::getMostRecentPost()->post_name:
                 home_url(),
             'latest_post_title' => RecentPosts::getMostRecentPost() ?
                 RecentPosts::getMostRecentPost()->post_title :

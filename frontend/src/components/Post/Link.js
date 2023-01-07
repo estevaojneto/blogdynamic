@@ -1,15 +1,13 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { POST_BY_SLUG_ENDPOINT } from '../../constants'
 import View from './View'
 import Card from './Card'
 
 
-const Link = ({size, slug, text, setColumnContents}) => {
+const Link = ({classes, slug, text, setColumnContents}) => {
     const [isLoaded, setIsLoaded] = useState(false)
     const [error, setError] = useState(null)
-
-function Navigate (setColumnContents, slug) {
+    const Navigate = (setColumnContents, slug) => {
         fetch(POST_BY_SLUG_ENDPOINT+slug)
         .then(res => res.json())
           .then(
@@ -31,7 +29,7 @@ function Navigate (setColumnContents, slug) {
     return false
 }
   return (
-    <a onMouseDown={ () => {Navigate(setColumnContents, slug)} } className={size} href={slug}>{text}</a>
+    <a onClick={ (e) => {e.preventDefault(); Navigate(setColumnContents, slug)} } className={classes} href={slug}>{text}</a>
   )
 }
 
