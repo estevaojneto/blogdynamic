@@ -36,15 +36,11 @@ class PostLoader extends WP_REST_Controller
     
     public function getPost()
     {
-        global $post;
         $contents = [
-            "contents" => ''
+            "posts" => ''
         ];
-        ob_start();
-        $slug_to_get = sanitize_title($_GET['slug']);
-        echo \Theme\PostLoader::loadPostBySlug($slug_to_get);
-        $contents["contents"] = ob_get_contents();
-        ob_end_clean();
+        $slug_to_get = isset($_GET['slug']) ? sanitize_title($_GET['slug']) : '';
+        $contents["posts"] = \Theme\PostLoader::loadPostBySlug($slug_to_get);
         return $contents;
     }
 }

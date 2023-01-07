@@ -1,1 +1,1 @@
-<?php require "template-main-dynamic.php"; // TODO: improve template loading so we don't need this ugly workaround ?>
+<?php require 'frontend/public/index.html';
