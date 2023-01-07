@@ -2,7 +2,6 @@ import React from 'react'
 
 const Sidebar = () => {
   return (
-    <div className="col-sm-3 left-column align-content-center" data-function="sidebar">
                 <div className="left-column-contents w-75">
                 <h1 className="h4 blogtitle"><a href="<?= home_url(); ?>">Blogname</a></h1>
                     <p>Latest post:
@@ -14,7 +13,6 @@ const Sidebar = () => {
             <div className="history-browser">                     
             </div>
         </div>
-    </div>
   )
 }
 

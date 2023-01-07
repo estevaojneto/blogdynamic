@@ -8,8 +8,8 @@ function App() {
     <main>
       <div class="container-full">
         <div class="row main-row">
-          <RightColumn />
           <LeftColumn />
+          <RightColumn />
         </div>
       </div>
     </main>

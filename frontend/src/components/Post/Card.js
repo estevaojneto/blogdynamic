@@ -1,14 +1,11 @@
 import React from 'react'
+import Header from './Header'
 
-const Postcard = (props) => {
+const Card = (props) => {
   return (
       <div className="row p-2">
           <div className="col-md-8 mx-auto pb-3 container-PostList-post">
-              <div className="pb-3">
-                  <h1><a className="h4" href="/{props.post.post_name}">{props.post.post_title}</a></h1>
-                  <p><em>{props.post.post_date}</em></p>
-                  <p><em>By {props.post.post_author}</em></p>
-              </div>
+            <Header title={props.post.post_title} link={props.post.post_name} author={props.post.post_author} date={props.post.post_date}></Header>
               <div>
                 <p><em>{props.post.post_contents}</em></p>
               </div>
@@ -18,4 +15,4 @@ const Postcard = (props) => {
   )
 }
 
-export default Postcard
+export default Card

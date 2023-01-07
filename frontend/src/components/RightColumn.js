@@ -1,9 +1,11 @@
 import React from 'react'
-import Sidebar from './Sidebar'
+import PostList from './Post/List'
 
 const RightColumn = () => {
   return (
-    <Sidebar />
+    <div className="col-sm-9 right-column">
+        <PostList/>
+    </div>
   )
 }
 

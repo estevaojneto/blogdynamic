@@ -1,8 +1,8 @@
 import React from 'react'
-import Postcard from './Postcard'
+import Card from './Card'
 import { useState, useEffect } from 'react'
 
-const PostList = () => {
+const List = () => {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [posts, setPosts] = useState([]);
@@ -29,11 +29,11 @@ const PostList = () => {
         return (
             <div>
             {posts.map(post => (
-                <Postcard key={post.ID} post={post} />
+                <Card key={post.ID} post={post} />
             ))}
             </div>
         );
       }
 }
 
-export default PostList
+export default List
