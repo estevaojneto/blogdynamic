@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from './Card'
 import { useState, useEffect } from 'react'
+import { POST_ENDPOINT } from '../../constants';
 
 const List = () => {
     const [error, setError] = useState(null);
@@ -8,7 +9,7 @@ const List = () => {
     const [posts, setPosts] = useState([]);
   
     useEffect(() => {
-      fetch("https://bloglocal.ddev.site/wp-json/blogdynamic/v1/post/")
+      fetch(POST_ENDPOINT)
         .then(res => res.json())
         .then(
           (result) => {

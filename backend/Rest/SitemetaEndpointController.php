@@ -39,7 +39,10 @@ class SitemetaEndpointController extends RestController
             'latest_post_url' => RecentPosts::getMostRecentPost() ?
                 get_permalink(RecentPosts::getMostRecentPost()) :
                 home_url(),
-            'privacy_page_url' => get_privacy_policy_url()
+            'latest_post_title' => RecentPosts::getMostRecentPost() ?
+                RecentPosts::getMostRecentPost()->post_title :
+                'None',
+            'privacy_policy_page_url' => get_privacy_policy_url()
         ];
         return $info;
     }
