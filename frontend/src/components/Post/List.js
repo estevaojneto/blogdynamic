@@ -29,7 +29,7 @@ const List = () => {
         return (
             <div>
             {posts.map(post => (
-                <Card key={post.ID} post={post} />
+                <Card key={post.name} post={post} />
             ))}
             </div>
         );

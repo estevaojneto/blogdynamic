@@ -6,8 +6,8 @@ import LeftColumn from './components/LeftColumn';
 function App() {
   return (
     <main>
-      <div class="container-full">
-        <div class="row main-row">
+      <div className="container-full">
+        <div className="row main-row">
           <LeftColumn />
           <RightColumn />
         </div>

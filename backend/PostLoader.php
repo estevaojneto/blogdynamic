@@ -22,7 +22,7 @@ class PostLoader
                 'numberposts' => 10,
                 'post_status' => 'publish',
                 'orderby' => 'post_date'
-            ));
+            ), OBJECT);
         }
         return self::$mostRecentPosts;
     }
@@ -58,7 +58,7 @@ class PostLoader
             $contents = self::loadFrontpagePostList();
         } else {
             $post = get_page_by_path($slug_to_get, OBJECT, 'post');            
-            $contents[] = $post;
+            $contents[] = self::adjustPostObject($post);
         }
         return $contents;
     }
@@ -68,8 +68,19 @@ class PostLoader
         $contents = [];
         $latest_posts = self::getMostRecentPosts();
         foreach ($latest_posts as $post) {
-            $contents[] = $post;
+            $contents[] = self::adjustPostObject($post);
         }
         return $contents;
+    }
+
+    private static function adjustPostObject(\WP_Post $post)
+    {
+        $post_result = [];
+        $post_result['date_gmt'] = strtotime($post->post_date_gmt);
+        $post_result['author'] = get_the_author_meta('first_name', $post->post_author).' '.get_the_author_meta('last_name', $post->post_author);
+        $post_result['contents'] = $post->post_content;
+        $post_result['title'] = $post->post_title;
+        $post_result['name'] = $post->post_name;
+        return $post_result;
     }
 }
