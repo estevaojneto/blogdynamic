@@ -7,7 +7,7 @@ use WP_REST_Server;
 use WP_Error;
 use WP_Query;
 use Theme\Constants;
-use Theme\RecentPostsFacade;
+use Theme\Facades\GetPosts;
 
 class PostEndpointController extends RestController
 {
@@ -37,7 +37,7 @@ class PostEndpointController extends RestController
             "posts" => ''
         ];
         $slug_to_get = isset($_GET['slug']) ? sanitize_title($_GET['slug']) : '';
-        $contents["posts"] = RecentPostsFacade::loadPostBySlug($slug_to_get);
+        $contents["posts"] = GetPosts::loadPostInfoBySlug($slug_to_get);
         return $contents;
     }
 }

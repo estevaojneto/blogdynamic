@@ -7,7 +7,7 @@ use WP_REST_Server;
 use WP_Error;
 use WP_Query;
 use Theme\Constants;
-use Theme\RecentPostsFacade;
+use Theme\Facades\RecentPosts;
 
 class SitemetaEndpointController extends RestController
 {
@@ -36,8 +36,8 @@ class SitemetaEndpointController extends RestController
         $info = [
             'home_url' => home_url(),
             'site_name' => get_bloginfo('blogname'),
-            'latest_post_url' => RecentPostsFacade::getMostRecentPost() ?
-                get_permalink(RecentPostsFacade::getMostRecentPost()) :
+            'latest_post_url' => RecentPosts::getMostRecentPost() ?
+                get_permalink(RecentPosts::getMostRecentPost()) :
                 home_url(),
             'privacy_page_url' => get_privacy_policy_url()
         ];
