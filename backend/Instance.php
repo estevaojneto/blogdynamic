@@ -2,9 +2,12 @@
 
 namespace Theme;
 
-class SiteLoader
+use Theme\Rest\RestControllerCollection;
+
+class Instance
 {
     static $currInstance = null; // only one instance per load, no reason for more
+
     public function __construct()
     {
         if (self::$currInstance === null) {
@@ -21,6 +24,16 @@ class SiteLoader
             remove_filter('comment_text', 'capital_P_dangit', 31);
             add_filter('excerpt_length', function () { return 50; }, 999);
             self::$currInstance = $this;
+            add_action('rest_api_init', function () {
+                RestAPI::getInstance()->init(
+                    new RestControllerCollection(
+                        [
+                            new \Theme\Rest\PostEndpointController(),
+                            new \Theme\Rest\SitemetaEndpointController()
+                        ]    
+                    )
+                );
+            });
         }
     }
 }

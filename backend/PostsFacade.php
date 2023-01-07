@@ -2,18 +2,15 @@
 
 namespace Theme;
 
-class PostLoader
+/**
+ * Provides a useful facade around get_posts(),
+ * mainly for getting a list of posts, or the most recent post, etc.
+ * You can still use get_posts directly, but I recommend using this
+ * function as it caches recent post calls.
+ */
+class RecentPostsFacade
 {
-    static $mostRecentPosts = null; // only one instance per load, no reason for more
-    public static function setHooks()
-    {
-        add_action('rest_api_init', [PostLoader::class, 'registerRoutes']);
-    }
-
-    public static function registerRoutes()
-    {
-        (new Rest\PostLoader())->registerRoutes();
-    }
+    static $mostRecentPosts = null; // run-time caching of the post result list
 
     public static function getMostRecentPosts()
     {
