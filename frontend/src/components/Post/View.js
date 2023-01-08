@@ -1,8 +1,13 @@
 import Link from './Link'
+import { SITENAME_TITLE } from '../../baseConstants'
+import { Helmet } from "react-helmet"
 
 const View = (props) => {
    return (
     <div className="container lh-lg overflow-auto">
+        <Helmet>
+            <title>{SITENAME_TITLE} - {props.post.title}</title>
+        </Helmet>
         <div className="col-md-8 mx-auto pb-4">
             <Link setColumnContents={props.setColumnContents} classes={"h4"} slug={""} text={"<<"}></Link>
             <div className="pb-4">

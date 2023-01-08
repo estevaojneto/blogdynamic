@@ -2,7 +2,12 @@ import { useState } from 'react'
 import { POST_BY_SLUG_ENDPOINT } from '../../constants'
 import View from './View'
 import Card from './Card'
+import { SITENAME_TITLE } from '../../baseConstants'
+import { Helmet } from "react-helmet"
 
+const title = <Helmet>
+  <title>{SITENAME_TITLE}</title>
+</Helmet>
 
 const Link = ({classes, slug, text, setColumnContents}) => {
     const [isLoaded, setIsLoaded] = useState(false)
@@ -29,7 +34,7 @@ const Link = ({classes, slug, text, setColumnContents}) => {
     return false
 }
   return (
-    <a onClick={ (e) => {e.preventDefault(); Navigate(setColumnContents, slug)} } className={classes} href={slug}>{text}</a>
+    <a onClick={ (e) => {e.preventDefault(); Navigate(setColumnContents, slug); return title; } } className={classes} href={slug}>{text}</a>
   )
 }
 
