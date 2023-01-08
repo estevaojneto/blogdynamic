@@ -36,7 +36,7 @@ class PostEndpointController extends RestController
         $contents = [
             "posts" => ''
         ];
-        $slug_to_get = isset($_GET['slug']) ? sanitize_title($_GET['slug']) : '';
+        $slug_to_get = isset($_GET['slug']) ? sanitize_title_for_query($_GET['slug']) : '';
         $contents["posts"] = GetPosts::loadPostInfoBySlug($slug_to_get);
         return $contents;
     }
