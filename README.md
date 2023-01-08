@@ -28,7 +28,7 @@ For forks, I ask you to please keep these credits and just add your name to them
 ## Some Technical Questions
 
 ### Does this support headless WP (SHORTINIT)?
-It might, but this is untested. I don't use it that way, personally and haven't looked too deep into it as the only thing preventing me from adding a SHORTINIT definition is that I find the WordPress admin area, used in conjunction with Classic Editor, a pretty nifty way of adding posts. Additionaly, on the one attempt I did of trying to run like that, I am also getting a error when trying to use SHORTINIT in WordPress 6.x; might be an environment issue I haven't looked further.
+It might if you can get a headless WP with a Rest API setup that allows the theme to return posts (I have seen and worked with such schemes in the past), but this is untested. I don't use it that way, personally and haven't looked too deep into it as the only thing preventing me from adding a SHORTINIT definition is that I find the WordPress admin area, used in conjunction with Classic Editor, a pretty nifty way of adding posts. Additionaly, on the one attempt I did of trying to run like that, I got an error on the WP side of the code (not related to the theme); might be an environment issue, but I haven't looked further.
 
 ### Can I use the frontend without WordPress?
 Sure! As long as the backend you set up is able to communicate via REST in the data format expected by the frontend, you can actually use anything. :)
