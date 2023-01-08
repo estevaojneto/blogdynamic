@@ -1,0 +1,22 @@
+@import 'styles/_columns.scss';
+@import 'styles/_input.scss';
+
+body {
+  color: $bd-white !important;
+  word-break: break-word;
+  white-space: normal;
+}
+a {
+  color: $bd-white !important
+}
+h1.blogtitle {
+  font-family: monospace
+}
+.container-full{
+  height: 100vh;
+  overflow: hidden;
+}
+.container-PostList-post {
+  width: 80%;
+  border-bottom: 1px solid #777!important;
+}

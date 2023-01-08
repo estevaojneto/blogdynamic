@@ -1,0 +1,29 @@
+// TODO: restyle form elements after implementing the comment box
+input{
+    text-align:center;
+    border: 0;
+    background-color: transparent;
+    color: #ccc;
+  }
+  input:not([type=submit])
+  {
+    background-color: white;
+    border-radius: 3px;
+    border: 2px solid #ccc!important
+  }
+  
+  input[type=submit]{
+    border: 2px solid #ccc!important;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-track {
+    box-shadow: #cac8c6; 
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: $bd-white; 
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #aaa8a6; 
+  }

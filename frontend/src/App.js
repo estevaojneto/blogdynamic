@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import './App.scss';
 import RightColumn from './components/RightColumn';
 import LeftColumn from './components/LeftColumn';
 import Card from './components/Post/Card';
