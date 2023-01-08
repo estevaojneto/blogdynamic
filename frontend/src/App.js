@@ -5,6 +5,8 @@ import LeftColumn from './components/LeftColumn';
 import Card from './components/Post/Card';
 import { useState, useEffect } from 'react'
 import { POSTS_ENDPOINT } from './constants'
+import { SITENAME_TITLE } from './baseConstants';
+import { Helmet } from "react-helmet"
 
 function App() {
 
@@ -29,6 +31,9 @@ function App() {
   }, [])
   return (
     <main className="h-100">
+      <Helmet>
+        <title>{SITENAME_TITLE}</title>
+      </Helmet>
       <div className="container-full">
         <div className="row main-row h-100">
           <LeftColumn setColumnContents={setColumnContents} />
