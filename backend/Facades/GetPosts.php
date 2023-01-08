@@ -40,7 +40,7 @@ class GetPosts
         $post_result = [];
         $post_result['date_gmt'] = strtotime($post->post_date_gmt);
         $post_result['author'] = get_the_author_meta('first_name', $post->post_author).' '.get_the_author_meta('last_name', $post->post_author);
-        $post_result['contents'] = $post->post_content;
+        $post_result['contents'] = wpautop($post->post_content);
         $post_result['excerpt'] = wp_trim_excerpt("", $post);
         $post_result['title'] = $post->post_title;
         $post_result['name'] = $post->post_name;
