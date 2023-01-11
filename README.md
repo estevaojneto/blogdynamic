@@ -1,4 +1,4 @@
-<img src="https://github.com/estevaojneto/blogdynamic/blob/main/screenshot.png"/>
+<img src="https://github.com/estevaojneto/blogdynamic/blob/master/screenshot.png"/>
 
 A theme originally used in https://0395.ch.
 
