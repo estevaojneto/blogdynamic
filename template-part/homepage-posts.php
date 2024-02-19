@@ -12,7 +12,7 @@ if(empty($excerpt)){
 		<a class="h-100 p-3 w-100 d-flex align-items-center <?= $bg_img_src ? 'text-with-bg-text' : '' ?>"  href="/<?= $args["post_name"] ?>">
 			<div class="w-100">
 				<h2 class="h3"><?= $args["post_title"] ?></h2>
-				<div>
+				<div class="post-card-excerpt">
 					<?= $excerpt ?>
 				</div>
 				<small><em><?= wp_date(get_option("date_format"), strtotime($args["post_date"])) ?></em></small>

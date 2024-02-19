@@ -49,7 +49,7 @@ $background_style = $bg_img_src ?
                 <div class="col-lg-8">
                     <div class="p-3">
                         <div class="outline">
-                            <div class="p-3">
+                            <div class="p-3 single-post-contents">
                                 <?= apply_filters('the_content', $post->post_content) ?>
                             </div>
                         </div>
