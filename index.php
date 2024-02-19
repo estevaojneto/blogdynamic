@@ -14,7 +14,7 @@ if($background_custom_image)
 <html lang="en">
 	<?= get_header() ?>
 	<body>
-		<div class="container">
+		<div class="container" style="min-height: 100vh">
 			<div class="row card-row" style="display: flex;flex-direction: row;align-items: stretch;">
 				<div class="col-md-6 mb-4 mt-3 post-card-container">
 					<div class="outline post-card-outline first-card p-0 m-0">

@@ -3,6 +3,7 @@ body {
     font-family: 'Noto Serif', serif;
     color: #413e40;
     background-color: #e5d1c4;
+    min-height: 100vh!important
 }
 a.blog-link-card{
     color:#e5d1c4

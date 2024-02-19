@@ -8,17 +8,19 @@ $background_style = $bg_img_src ?
 <html lang="en">
 	<?= get_header() ?>
 	<body>
-		<div class="container">
+		<div class="container" style="min-height: 100vh">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="p-3">
+                        <?php if($bg_img_src){?>
                         <div <?= $background_style ?> class="p-3 single-hero-background"></div>
+                        <?php }?>
                     </div>
 				</div>
                 <div class="col-lg-4">
                     <div class="p-3">
-                        <div class="row position-fixed">
-                            <div class="p-3 ">
+                        <div class="row">
+                            <div class="p-3 col-lg-3 position-fixed">
                                 <h1><?= $post->post_title ?></h1>
                                 <p class="h5"><em><?= get_the_date(); ?></em></p>
                                 <div class="row">
