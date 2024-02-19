@@ -7,6 +7,10 @@ body {
     color: var(--base-dark);
     background-color: var(--base-light);
     min-height: 100vh!important;
+    font-size: 12pt
+}
+h1 {
+    font-size: 24pt!important;
 }
 figure > img {
     max-width: 100%;
@@ -83,7 +87,6 @@ input[type=submit]{
 }
 .single-site-card
 {
-    height: 5.5rem;
     height: 8.5rem;
 }
 .post-card-container
