@@ -25,13 +25,15 @@ $background_style = $bg_img_src ?
                                 <p class="h5"><em><?= get_the_date(); ?></em></p>
                                 <div class="row">
                                     <div class="col-6 text-left">
+                                        <p class="m-0 p-0"><small>Previous post</small></p>
                                         <span class="h5">
-                                            <a href="#"><< Prev</a>
+                                            <?= get_previous_post_link() ?>
                                         </span>
                                     </div>
                                     <div class="col-6 text-right" style="text-align:right!important">
+                                        <p class="m-0 p-0"><small>Next post</small></p>
                                         <span class="h5">
-                                            <a href="#">>> Next</a>
+                                            <?= get_next_post_link() ?>
                                         </span>
                                     </div>
                                 </div>
