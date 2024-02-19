@@ -1,47 +1,46 @@
 
 body {
-    font-family: 'Helvetica', serif;
-    color: #eae8e6 !important
+    font-family: 'Noto Serif', serif;
+    color: #413e40;
+    background-color: #e5d1c4;
+}
+a.blog-link-card{
+    color:#e5d1c4
+}
+.privacy-link{
+    color:#e5d1c4
+}
+.first-card
+{
+    background-color: #413e40;
+    color: #e5d1c4;
+    border:none;
+    display: flex;
+    align-items: center;
+    place-content: center
+}
+.card-background, .single-hero-background
+{
+    background-repeat: no-repeat!important;
+    background-size: cover!important;
+    background-position:center!important;   
 }
 a {
-    color: #eae8e6 !important
+    color: #413e40;
+    text-decoration: none;
 }
 input{
     text-align:center;
     border: 0;
     background-color: transparent;
-    color: #ccc;
+    color: #413e40;
 }
-img.my-photo{
-    border-radius: 100%;
-    width: 20vh;
-    height: auto;
-    margin: 3vh 0 3vh 0
+.single-hero-background{
+    min-height: 300px
 }
-.left-column {
-    background-color: #2a2826;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    position: sticky;
-    top: 0;
-    left: 0;
-    max-height: 100vh
-}
-.left-column-contents {
-    margin: 6.25%;
-    text-align: center
-}
-.right-column {
-    background-color: #4a4846;
-    padding-bottom: 12vh
-}
-.searchbox-container {
-    width:100%;
-    margin: 0 auto
-}
-h1.blogtitle {
-    font-family: monospace
+.text-with-bg-text{
+    backdrop-filter: brightness(0.45);
+    color:#e5d1c4
 }
 input:not([type=submit])
 {
@@ -49,28 +48,36 @@ input:not([type=submit])
     border-radius: 3px;
     border: 2px solid #ccc!important
 }
-
+.card-row > 
 input[type=submit]{
     border: 2px solid #ccc!important;
     border-radius: 3px;
 }
-.container-full{
-    overflow-y: scroll;
-    height: 100vh;
-    overflow-x: hidden;
+.outline
+{
+    border: 2px solid #413e40!important;
 }
-.container-postlist-post {
-    width: 80%;
-    border-bottom: 1px solid #777!important;
+.post-card-outline{
+    height: 25rem;
 }
-::-webkit-scrollbar-track {
-    box-shadow: #cac8c6; 
-    border-radius: 10px;
+.post-card-container
+{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
 }
-::-webkit-scrollbar-thumb {
-    background: #eae8e6; 
-    border-radius: 10px;
+
+div.footer{
+    position:sticky;
+    bottom: 0;
+    background-color: #413e40;
+    color: #e5d1c4;
 }
-::-webkit-scrollbar-thumb:hover {
-    background: #aaa8a6; 
+footer{
+    position: sticky;
+    bottom: 0;
+    text-align: center;
+    width:100%
 }

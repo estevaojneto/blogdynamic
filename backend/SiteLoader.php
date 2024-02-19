@@ -8,6 +8,8 @@ class SiteLoader
     public function __construct()
     {
         if (self::$currInstance === null) {
+            new Admin();
+			add_theme_support('post-thumbnails');
             remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
             remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
             remove_action( 'wp_print_styles', 'print_emoji_styles' );
@@ -33,7 +35,6 @@ class SiteLoader
     {
         wp_dequeue_style( 'wp-block-library' );
         wp_dequeue_style( 'wp-block-library-theme' );
-        wp_dequeue_style( 'wc-blocks-style' );
         wp_deregister_style('classic-theme-styles');
         wp_dequeue_style('classic-theme-styles');
         wp_dequeue_script( 'jquery');
@@ -62,6 +63,7 @@ class SiteLoader
     {
         $theme_dir = dirname(get_stylesheet_uri());
         wp_enqueue_style('bootstrap', $theme_dir.Constants::FRONTEND_CSS_PATH.'/bootstrap.min.css');
+        wp_enqueue_style('bootstrap', $theme_dir.Constants::FRONTEND_JS_PATH.'/bootstrap.min.js');
         wp_enqueue_style('main', $theme_dir.Constants::FRONTEND_CSS_PATH.'/main.css');
     }
 }
