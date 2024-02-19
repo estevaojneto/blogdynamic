@@ -1,20 +1,23 @@
-
+:root {
+    --base-dark: #413e40;
+    --base-light: #e5d1c4;
+}
 body {
     font-family: 'Noto Serif', serif;
-    color: #413e40;
-    background-color: #e5d1c4;
+    color: var(--base-dark);
+    background-color: var(--base-light);
     min-height: 100vh!important
 }
 a.blog-link-card{
-    color:#e5d1c4
+    color:var(--base-light)
 }
 .privacy-link{
-    color:#e5d1c4
+    color:var(--base-light)
 }
 .first-card
 {
-    background-color: #413e40;
-    color: #e5d1c4;
+    background-color: var(--base-dark);
+    color: var(--base-light);
     border:none;
     display: flex;
     align-items: center;
@@ -26,22 +29,30 @@ a.blog-link-card{
     background-size: cover!important;
     background-position:center!important;   
 }
+.single-menu-side-fixed{
+    position: fixed;
+}
+@media (max-width: 991px) {
+    .single-menu-side-fixed{
+        position: inherit;
+    }
+}
 a {
-    color: #413e40;
+    color: var(--base-dark);
     text-decoration: none;
 }
 input{
     text-align:center;
     border: 0;
     background-color: transparent;
-    color: #413e40;
+    color: var(--base-dark)
 }
 .single-hero-background{
     min-height: 300px
 }
 .text-with-bg-text{
     backdrop-filter: brightness(0.45);
-    color:#e5d1c4
+    color:var(--base-light)
 }
 input:not([type=submit])
 {
@@ -56,7 +67,7 @@ input[type=submit]{
 }
 .outline
 {
-    border: 2px solid #413e40!important;
+    border: 2px solid var(--base-dark)
 }
 .post-card-outline{
     height: 25rem;
@@ -73,8 +84,8 @@ input[type=submit]{
 div.footer{
     position:sticky;
     bottom: 0;
-    background-color: #413e40;
-    color: #e5d1c4;
+    background-color: var(--base-dark);
+    color: var(--base-light);
 }
 footer{
     position: sticky;

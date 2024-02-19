@@ -18,9 +18,9 @@ $background_style = $bg_img_src ?
                     </div>
 				</div>
                 <div class="col-lg-4">
-                    <div class="p-3">
+                    <div>
                         <div class="row">
-                            <div class="p-3 col-lg-3 position-fixed">
+                            <div class="p-3 col-lg-3 single-menu-side-fixed">
                                 <h1><?= $post->post_title ?></h1>
                                 <p class="h5"><em><?= get_the_date(); ?></em></p>
                                 <div class="row">
