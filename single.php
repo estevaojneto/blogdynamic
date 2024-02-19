@@ -35,7 +35,7 @@ $background_style = $bg_img_src ?
                                         </span>
                                     </div>
                                     <div class="col-md-12 mb-4 mt-3 post-card-container">
-                                        <div class="outline post-card-outline first-card p-0 m-0">
+                                        <div class="outline single-site-card site-card p-0 m-0">
                                             <div class="d-flex align-items-center h-50 w-50 justify-content-center" style="border: 2px solid">
                                                 <h1 class="h1 blogtitle"><a class="blog-link-card" href="<?= home_url() ?>"><?= get_bloginfo("name") ?></a></h1>
                                             </div>

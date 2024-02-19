@@ -14,7 +14,7 @@ a.blog-link-card{
 .privacy-link{
     color:var(--base-light)
 }
-.first-card
+.site-card
 {
     background-color: var(--base-dark);
     color: var(--base-light);
@@ -71,6 +71,11 @@ input[type=submit]{
 }
 .post-card-outline{
     height: 25rem;
+}
+.single-site-card
+{
+    height: 5.5rem;
+    height: 8.5rem;
 }
 .post-card-container
 {

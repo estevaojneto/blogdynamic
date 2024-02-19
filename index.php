@@ -17,7 +17,7 @@ if($background_custom_image)
 		<div class="container" style="min-height: 100vh">
 			<div class="row card-row" style="display: flex;flex-direction: row;align-items: stretch;">
 				<div class="col-md-6 mb-4 mt-3 post-card-container">
-					<div class="outline post-card-outline first-card p-0 m-0">
+					<div class="outline post-card-outline site-card p-0 m-0">
 						<div class="d-flex align-items-center h-50 w-50 justify-content-center" style="border: 2px solid">
 							<h1 class="h1 blogtitle"><?= get_bloginfo("name") ?></h1>
 						</div>
