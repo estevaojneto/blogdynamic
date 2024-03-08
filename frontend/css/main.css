@@ -7,7 +7,6 @@ body {
     color: var(--base-dark);
     background-color: var(--base-light);
     min-height: 100vh!important;
-    font-size: 12pt
 }
 h1 {
     font-size: 24pt!important;
@@ -15,6 +14,14 @@ h1 {
 figure > img {
     max-width: 100%;
     height: auto;
+}
+p{
+	line-height:1.85rem;
+	font-size: 1.25rem
+}
+a {
+    color: var(--base-dark);
+    text-decoration: none;
 }
 a.blog-link-card{
     color:var(--base-light)
@@ -49,11 +56,12 @@ a.blog-link-card{
     .single-menu-side-fixed{
         position: inherit;
     }
+	p{
+		font-size: 1.375rem
+	}
 }
-a {
-    color: var(--base-dark);
-    text-decoration: none;
-}
+
+
 input{
     text-align:center;
     border: 0;
