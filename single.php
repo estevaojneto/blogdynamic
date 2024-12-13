@@ -1,6 +1,8 @@
 <?php
 global $post;
 $bg_img_src = get_the_post_thumbnail_url($post->ID, 'large');
+$next_post_link = get_next_post_link();
+$prev_post_link = get_previous_post_link();
 $background_style = $bg_img_src ? 
     "style='background:url($bg_img_src)';" : '';
 ?>
@@ -24,16 +26,20 @@ $background_style = $bg_img_src ?
                                 <p class="h5"><em><?= get_the_date(); ?></em></p>
                                 <div class="row">
                                     <div class="col-6 text-left">
-                                        <p class="m-0 p-0"><small>Previous post</small></p>
-                                        <span class="h5">
-                                            <?= get_previous_post_link() ?>
-                                        </span>
+					<?php if(prev_post_link) {?>
+	                                        <p class="m-0 p-0"><small>Previous post</small></p>
+	                                        <span class="h5">
+	                                            <?= $prev_post_link ?>
+	                                        </span>
+					<?php } ?>
                                     </div>
                                     <div class="col-6 text-right" style="text-align:right!important">
-                                        <p class="m-0 p-0"><small>Next post</small></p>
-                                        <span class="h5">
-                                            <?= get_next_post_link() ?>
-                                        </span>
+					<?php if($next_post_link) {?>
+	                                        <p class="m-0 p-0"><small>Next post</small></p>
+	                                        <span class="h5">
+	                                            <?= $next_post_link ?>
+	                                        </span>
+					<?php } >
                                     </div>
                                 </div>
                                 <div class="row">
